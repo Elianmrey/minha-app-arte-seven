@@ -1,0 +1,31 @@
+.generalContainer
+{
+  display: flex;
+  flex-wrap: wrap;
+  gap:25px;
+}
+.cardContainer
+{
+  padding:10px;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  width: 250px;
+  height: 450px;
+  border: 2px groove #171820;
+  border-radius: 25px;
+  background-image: linear-gradient(120deg,#2e3140,#12151d);
+  color:azure;
+  gap: 10px;
+}
+
+.imgContainer
+{
+width: 200px;
+border: 2px groove #171820;
+}
+
+.imgStyle
+{
+  width: 100%;
+}

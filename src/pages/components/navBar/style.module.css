@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap');
+*{
+  font-family: Poppins, sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+@media (max-width: 768px) {
+.container {
+  display: flex;
+  height: 100vh;
+  width: 300px;
+  overflow-x: hide;
+}
+
+.navbar
+{
+display: flex;
+flex-direction: column;
+height: 100vh;
+width: 300px;
+border-top-right-radius: 10vh;
+border-bottom-right-radius: 10vh;
+background: linear-gradient(#270133, #011325);
+color: white;
+box-shadow: 10px 15px 25px #000000;
+overflow-y: auto;
+
+}
+.logoContainer
+{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+
+}
+.logoText
+{
+  font-family: "Teachers";
+  font-size: 2.5rem;
+  font-weight: 700;
+  white-space: wrap;
+}
+.logo
+{
+  margin: 15px;
+  width: 100px;
+}
+.menu
+{
+  display: flex;
+  flex-grow: 1;
+  flex-direction:column;
+  list-style: none;
+  overflow-x: hidden;
+}
+.menu li
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  border-bottom:  white 2px groove;
+  box-sizing:border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.menu:first-child
+{
+  border-top:  white 2px groove;
+}
+.menu li  a
+{
+  display: flex;
+  text-decoration: none;
+  color: white;
+  flex-grow: 1;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  background-color:transparent;
+  padding: 20px;
+}
+
+.menu li:active
+{
+background-color: black;
+}
+
+.menu li a:active, a:any-link
+{
+background-color: transparent;
+}
+
+.noDisplay
+{
+  
+}
+}
