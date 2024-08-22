@@ -7,8 +7,11 @@ import './layout.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <NavBar />
-    <Card />
+    <div className="container">
+      <NavBar className="navbar" />
+    <Card className="card" />
+    </div>
+
 
   </StrictMode>,
 )

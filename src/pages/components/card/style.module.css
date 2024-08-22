@@ -10,7 +10,7 @@
   display:flex;
   flex-direction: column;
   align-items:center;
-  width: 250px;
+  width: 300px;
   height: 450px;
   border: 2px groove #171820;
   border-radius: 25px;
@@ -28,4 +28,11 @@ border: 2px groove #171820;
 .imgStyle
 {
   width: 100%;
+}
+
+.cardHeader
+{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }

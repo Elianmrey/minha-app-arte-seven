@@ -21,9 +21,11 @@ export default function FilmCard() {
     };
 
     try {
-      const response = await fetch('https://api.themoviedb.org/3/trending/all/day?language=pt-BR', options);
+      const response = await fetch('https://api.themoviedb.org/3/discover/movie', options);
+
       const data = await response.json();
-      return data.results.map(item => `https://image.tmdb.org/t/p/w500${item.poster_path}`);
+
+      return data.results;
     } catch (err) {
       console.error(err);
       return [];
@@ -41,10 +43,12 @@ export default function FilmCard() {
         images.map((item, index) => (
           <div key={index} className={CardStyle.cardContainer}>
             <div className={CardStyle.imgContainer}>
-              <img src={item} alt={`Image ${index}`} className={CardStyle.imgStyle} />
+              <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt={`Image ${index}`} className={CardStyle.imgStyle} />
             </div>
             <div className={CardStyle.cardHeader}>
-              media name
+              <span key={index}>{item.title}</span>  {/* Titulo*/}
+              <span key={index}>{item.release_date}</span> {/* Ano de lançamento*/}
+              { console.log(JSON.stringify(images))}
             </div>
           </div>
          ))

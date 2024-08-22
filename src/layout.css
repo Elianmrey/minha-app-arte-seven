@@ -1,9 +1,21 @@
-html
+body
 {
+  display:flex;
   background-image: linear-gradient(45deg,#000000 10% 10% , #011325 50% 50%);
   background-attachment: fixed;
 }
+
+.container
+{
+  display: flex;
+  gap: 20px;
+}
 .navbar
 {
-  transition: 500ms;
+z-index: 2;
+ }
+
+ .card
+ {
+  z-index: 1;
  }
