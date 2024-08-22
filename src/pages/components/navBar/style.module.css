@@ -93,9 +93,13 @@ background-color: black;
 background-color: transparent;
 }
 
+
 }
 
-
+.menu li:hover
+{
+background-color: #270133;
+}
 
 
 

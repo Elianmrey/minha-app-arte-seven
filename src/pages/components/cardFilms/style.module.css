@@ -10,8 +10,9 @@
   display:flex;
   flex-direction: column;
   align-items:center;
-  width: 300px;
-  height: 450px;
+  justify-content: center;
+  width: 250px;
+  height: 350px;
   border: 2px groove #171820;
   border-radius: 25px;
   background-image: linear-gradient(120deg,#2e3140,#12151d);
@@ -21,29 +22,31 @@
 
 .imgContainer
 {
-width: 200px;
+width: 150px;
 border: 2px groove #171820;
 }
 
 .imgStyle
 {
   width: 100%;
+  height: 100%;
 }
 
 .cardHeader
 {
-
   width: 100%;
   height: 100%;
   align-items:center;
   display: flex;
   flex-direction: column;
+  justify-content:center;
   gap: 5px;
-  border: solid 2px #f7f7f7;
+  white-space: wrap;
+
 }
 .title
 {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 .data
