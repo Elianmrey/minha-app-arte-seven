@@ -21,7 +21,7 @@ export default function FilmCard() {
     };
 
     try {
-      const response = await fetch('https://api.themoviedb.org/3/discover/movie', options);
+      const response = await fetch('https://api.themoviedb.org/3/discover/movie?language=pt-BR', options);
 
       const data = await response.json();
 
@@ -46,9 +46,11 @@ export default function FilmCard() {
               <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt={`Image ${index}`} className={CardStyle.imgStyle} />
             </div>
             <div className={CardStyle.cardHeader}>
-              <span key={index}>{item.title}</span>  {/* Titulo*/}
-              <span key={index}>{item.release_date}</span> {/* Ano de lançamento*/}
-              { console.log(JSON.stringify(images))}
+
+              <span key={index} className={CardStyle.title}>{item.original_title}</span>  {/* Titulo*/}
+              <span key={index} className={CardStyle.data}>Data de Lançamento: {item.release_date}</span> {/* Ano de lançamento*/}
+               {/* <span key={index}>{item.overview}</span> */}
+
             </div>
           </div>
          ))
