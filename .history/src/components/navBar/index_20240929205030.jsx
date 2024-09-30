@@ -7,7 +7,6 @@ export default function NavBar() {
 
   return (
     <div className={NavBarStyle.container}>
-      
       <nav className={NavBarStyle.navbar}>
         <div className={ NavBarStyle.logoContainer}>
           <img src={svgimg} className={NavBarStyle.logo} />

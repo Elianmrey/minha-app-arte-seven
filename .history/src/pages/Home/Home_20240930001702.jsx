@@ -1,10 +1,13 @@
 import NavBar from '../../components/navBar/index.jsx';
 import Card from '../../components/cardFilms/cardFilms.jsx';
 import CardTvShows from '../../components/cardTvShows/cardTvShows.jsx';
-import StyleLayout from './layout.module.css'
+import StyleLayout from '../../layout.module.css'
 import { useState } from 'react';
 import img from '../../components/img/paranoidMenu.svg'
 import SearchBar from '../../components/StyleSearch/SearchBar.jsx';
+import Home from './Home.jsx'
+
+
 
 
 export default function Home() {
