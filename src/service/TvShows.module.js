@@ -1,16 +1,9 @@
-import EnvironmentKey from  './EnvironmentConst.module'
+// import axios from 'axios';
+import { options } from '../options/options.js'
 
 export default async function GetTvShows() {
 
-  const EnvKey = EnvironmentKey()
 
-  const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization: `Bearer ${EnvKey}`
-    }
-  };
 
   try {
     const response = await fetch(

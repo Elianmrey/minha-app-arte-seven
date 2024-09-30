@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import CardStyle from './style.module.css';
-import GetTvShows from '../../../service/TvShows.module.js';
+import GetCardInfo from '../../service/Movies.module.js';
 
-export default function TvShowsCard() {
+export default function FilmCard() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
-      const fetchedImages = await GetTvShows();
+      const fetchedImages = await GetCardInfo();
       setImages(fetchedImages);
     }
 
@@ -23,14 +23,14 @@ export default function TvShowsCard() {
               <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt={`Image ${index}`} className={CardStyle.imgStyle} />
             </div>
             <div className={CardStyle.cardHeader}>
-              <span className={CardStyle.title}>{item.original_name}</span>  {/* Título */}
-              <span className={CardStyle.data}>Data de Lançamento: {item.first_air_date}</span> {/* Ano de lançamento */}
+              <span className={CardStyle.title}>{item.original_title}</span>  {/* Título */}
+              <span className={CardStyle.data}>Data de Lançamento: {item.release_date}</span> {/* Ano de lançamento */}
               {/* <span>{item.overview}</span> */}
             </div>
           </div>
         ))
       ) : (
-        <p>Loading images...</p> // Mensagem de carregamento enquanto as imagens não são carregadas
+          <p>Carregando informações...</p> 
       )}
     </div>
   );

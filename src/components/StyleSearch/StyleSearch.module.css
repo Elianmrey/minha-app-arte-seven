@@ -1,0 +1,26 @@
+.Container
+{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+}
+.ContainerSearch {
+    align-items: center;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: auto;
+    width: 80vw;
+    flex-direction: column;
+}
+
+.ContainerSearch input {
+    width: 100%;
+    height: 60px;
+    font-size: 35px;
+    padding-left: 10px;
+    text-rendering: optimizeLegibility;
+    border-radius: 7px;
+}

@@ -1,16 +1,8 @@
-import EnvironmentKey from './EnvironmentConst.module'
+import { options } from '../options/options.js'
+// import axios from 'axios';
 
 export default async function GetCardInfo() {
-  const EnvKey = EnvironmentKey();
-  
-const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization: `Bearer ${EnvKey}`,
-    },
-  };
-
+ 
   try {
     const response = await fetch('https://api.themoviedb.org/3/discover/movie?language=pt-BR', options);
     const data = await response.json();

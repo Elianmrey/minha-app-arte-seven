@@ -1,36 +1,20 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import NavBar from './pages/components/navBar/index.jsx';
-import Card from './pages/components/cardFilms/cardFilms.jsx';
-import CardTvShows from './pages/components/cardTvShows/cardTvShows.jsx';
-import './layout.css'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from './pages/Home/Home.jsx'
 
+const routes = createBrowserRouter([
+  { element: <Home />, path: '/' },
+  { element: <Home />, path: '/' },
+  { element: <Home />, path: '/' },
+  { element: <Home />, path: '/' },
 
+])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
 
-    <div className="container">
-        <div className="navigation-bar">
-              <NavBar  />
-          </div>
-
-      <div className="cards-container">
-
-      <div className='Films-Container'>
-        <h2 className='Title-Films'>Filmes</h2>
-      <Card  />
-      </div>
-
-
-      <div className='Shows-Container'>
-        <h2 className='Title-Films'>Series</h2>
-      <CardTvShows />
-      </div>
-</div>
-
-  </div>
-
+    <RouterProvider router={routes} />
 
   </StrictMode>,
 )
