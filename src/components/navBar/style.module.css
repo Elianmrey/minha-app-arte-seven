@@ -1,207 +1,184 @@
-@import url('https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap');
-*{
-  font-family: Poppins, sans-serif;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  transition:all .5s ease-in-out
-}
-
-    .ContainerAll {
-      display: flex;
-      position:fixed;
-      height: 100vh;
-      width: fit-content;
-      background: linear-gradient(#270133, #011325);
-      color: white;
-      box-shadow: 10px 15px 25px #000000;
-      overflow-y: auto;
-      border-radius: 10px;
-    }
-
-
-.AsideBar {
-  
-  height: 100vh;
-  width: 70px;
+.ContainerAll {
   display: flex;
-  background-color: #010b25;
-  margin: 0;
-  justify-content: center;
-  align-items: start;
-}
-
-.AsideBar img {
-  margin-top: 20px;
-  width: 60px;
-  cursor: pointer;
-}
-
-.navigationBar {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  transform: translate(0,0);
-  transition: all .5s;
-  height: 100%;
-  width: 300px;
-   
-}
-
-.navigationBarClosed {
-  transition: all .5s;
-  display: none;
-}
-
-.navbarButon {
-  background-color: transparent;
-  width: 90px;
-  border-radius: 50px;
-  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  margin: 10px auto auto 10px;
-
-}
-
-.navbarButon svg {
-  width: 40px;
-  fill: #ffffff;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .logoContainer {
   display: flex;
-  justify-content: center;
   align-items: center;
-
 }
 
-.logoText {
-  font-family: "Teachers";
-  font-size: 2.5rem;
-  font-weight: 700;
-  white-space: wrap;
+.logoContainer a
+{
+  text-decoration: none;
+ 
 }
 
 .logo {
-  margin: 15px;
-  width: 100px;
+  width: 40px;
+  height: auto;
+}
+
+.logoText {
+  margin-left: 10px;
+  font-size: 1.2rem;
+  color: #fff;
 }
 
 .menu {
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-  list-style: none;
-  overflow-x: hidden;
-}
-
-.menu li {
-  display: flex;
-  
-  align-items: center;
-  justify-content: center;
-  height: 60px;
-  border-bottom: white 2px groove;
-  box-sizing: border-box;
-  margin: 0;
+  list-style-type: none;
   padding: 0;
-}
-
-.menu:first-child {
-  border-top: white 2px groove;
-}
-
-.menu li a {
+  margin: 0;
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: #190122e0;
+  transition: transform 0.3s ease;
+  transform: translateY(0%);
+  z-index: 1;
+}
+
+.menuOpen {
+  transform: translateY(0%);
+  visibility: visible;
+  opacity: 1;
+  transition: all .3s;
+}
+.menuClosed
+{
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+}
+.menu li {
+  margin: 0;
+  text-align: center;
+  background-color:#ffffff0e;
+ padding: 10px; 
+ border-bottom: 2px solid #0200022f;
+}
+
+.menu a {
+  color: #fff;
   text-decoration: none;
-  color: white;
-  flex-grow: 1;
-  flex-wrap: nowrap;
-  white-space: nowrap;
-  background-color: transparent;
-  padding: 20px;
+  transition: color 0.3s;
+  padding: 20px 150px;
+}
+
+.menu a:active {
+  color: #ffa500;
+}
+
+.menu li:active {
+  background-color: #ffffff7c;
 }
 
 
+.ButtonsContainer {
+  display: flex;
+  align-items: center;
+}
+
+.MenuButton {
+  cursor: pointer;
+  display: flex;
+  width: 40px;
+}
+
+.backButton {
+  background-color: transparent;
+  width: 40px;
+  fill: #ae00ff;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  border:none;
+}
 
 @media (min-width: 768px) {
-.ContainerAllClosed, 
-.ContainerAll {
-display: flex;
-position:relative;
-flex-direction: row;
-height: 100px;
-width:100%;
-background: linear-gradient(#270133, #011325);
-color: white;
-box-shadow: 10px 15px 25px #000000;
-overflow-y: auto;
-border-radius: 10px;
-justify-content: center;
-align-items:center;
-gap:20px;
-overflow: hidden;
-} 
+ 
+  .ContainerAll
+  {
+    display:flex;
+    padding:0;
+    justify-content: center;
+   align-items: center;
+  }
+  .menu,
+  .menuOpen,
+  .menuClosed
+      {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: static;
+    background-color: transparent;
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items:center;
+    font-size: 1rem;
+    padding:10px;
+    gap:20px;
+    transform: translate(0%);
+  }
 
-.navigationBar
-{
-height: 90px;
-width: 100%;
+  .menu li,
+    .menuOpen li,
+    .menuClosed li
+    {
+    margin: 0 15px;
+    display: flex;
+    text-align:center;
+    justify-content: space-between;
+    align-items: center;
+    position: static;
+    margin: 0;
+    white-space: nowrap;
+  }
+    .menu li {
+      margin: 0;
+      text-align: center;
+      background-color:transparent;
+      padding: 10px;
+      border-bottom: none;
+    }
+  
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+      padding: 0px;
+    }
+.menu a:hover {
+  color: #ffa500;
 }
+    .logoContainer {
+      display: flex;
+      flex-direction: row;
+      margin-left: 20px;  
+      gap:10px;
+    }
 
-.navbarButon
-{
-display: none;
-}
-
-.menu{
-display: flex;
-width:100%;
-flex-direction: row;
-height: 100%;
-}
-.menu li
-{
-  display: flex;
-  height: 100%;
-  border:none;
-
-}
-.menu li:hover {
-  background-color: #2f077a;
-}
-
-
-.logoContainer
-{ 
-  display: flex;
-  width: fit-content;
-  flex-direction: row-reverse;
-  order: 2;
-  transform: scale(.8);
-  user-select: none;
-}
-.logoContainer img
-{
-  width: 70px;
-}
-.logoText
-{
-  font-size: 30px;
+ .logoContainer p 
+ {
+  font-size: 1.7rem;
   white-space: nowrap;
-}
-
-.AsideBar img 
-{
-  display:none;
-}
-.AsideBarClosed,
-.AsideBar
-{
-display: flex;
-width: 100vw;
-height:90px;
-}
-
+  text-decoration: none;
+ }
+    .backButton,
+  .MenuButton {
+    display: none;
+    visibility:hidden;
+  }
 }

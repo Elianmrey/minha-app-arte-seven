@@ -1,4 +1,3 @@
-// import axios from 'axios';
 import { options } from '../options/options.js'
 
 export default async function GetTvShows() {

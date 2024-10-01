@@ -5,10 +5,6 @@ import Home from './pages/Home/Home.jsx'
 
 const routes = createBrowserRouter([
   { element: <Home />, path: '/' },
-  { element: <Home />, path: '/' },
-  { element: <Home />, path: '/' },
-  { element: <Home />, path: '/' },
-
 ])
 
 createRoot(document.getElementById('root')).render(
