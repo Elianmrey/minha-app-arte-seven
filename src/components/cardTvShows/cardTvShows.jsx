@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import CardStyle from './style.module.css';
+import CardStyle from './styleTvShows.module.css';
 import GetTvShows from '../../service/TvShows.module.js';
 
 export default function TvShowsCard() {

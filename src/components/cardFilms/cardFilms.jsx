@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import CardStyle from './style.module.css';
+import CardStyle from './styleFilms.module.css';
 import GetCardInfo from '../../service/Movies.module.js';
 
 export default function FilmCard() {
@@ -10,8 +10,8 @@ export default function FilmCard() {
       const fetchedImages = await GetCardInfo();
       setImages(fetchedImages);
     }
-
     fetchData();
+    console.log('Dados da Api:',fetchData())
   }, []);
 
   return (
