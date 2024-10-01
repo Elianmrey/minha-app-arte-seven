@@ -11,6 +11,7 @@
   margin: 10px;
   overflow: hidden;
   width: 150px;
+  height: fit-content;
   transition: transform 0.3s;
 }
 
@@ -36,9 +37,11 @@
   flex-direction: column;
   justify-content: space-between;
   align-Items:center;
-
-}
-
+  height: fit-content;
+  }
+  .cardHeader:last-child[span] {
+    justify-content: end;
+  }
 .title {
   font-weight: bold;
 }

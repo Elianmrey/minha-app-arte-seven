@@ -36,7 +36,7 @@ export default function TvShowsCard({ searchTerm }) {
             </div>
             <div className={CardStyle.cardHeader}>
               <span className={CardStyle.title}>{item.original_name}</span>
-              <span className={CardStyle.data}>Data de Lançamento: {item.first_air_date}</span>
+              <span className={CardStyle.data}>Lançamento: {item.first_air_date}</span>
               <span className={CardStyle.data}><StarRating voteAverage={item.vote_average} /></span>
             </div>
           </div>

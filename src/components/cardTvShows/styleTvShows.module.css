@@ -32,6 +32,15 @@
   padding: 10px;
   text-align: center;
   color: #fff;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-Items:center;
+  height: fit-content;
+}
+.cardHeader:last-child[span]
+{
+  justify-content: end;
 }
 
 .title {
