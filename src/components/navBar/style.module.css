@@ -71,11 +71,12 @@
   color: #fff;
   text-decoration: none;
   transition: color 0.3s;
-  padding: 20px 150px;
+  padding: 10px 100px;
 }
 
 .menu a:active {
   color: #ffa500;
+  background: transparent;
 }
 
 .menu li:active {
@@ -124,7 +125,7 @@
     visibility: visible;
     opacity: 1;
     width: 100%;
-    justify-content: space-between;
+    justify-content:end;
     align-items:center;
     font-size: 1rem;
     padding:10px;
