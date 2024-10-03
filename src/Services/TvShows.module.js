@@ -14,7 +14,7 @@ export default async function GetTvShows() {
   return data.results;
 
   } catch (err) {
-    console.error(err); // Corrigido: use console.error para exibir o erro
-    return []; // Retorna um array vazio ou qualquer outro valor adequado em caso de erro
+    console.error(err);
+    return [];
   }
 }
