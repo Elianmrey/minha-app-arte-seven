@@ -6,6 +6,7 @@ import SearchBar from '../../components/StyleSearch/SearchBar.jsx';
 import { useState } from 'react';
 
 export default function Home() {
+    
     const [searchTerm, setSearchTerm] = useState('');
 
    

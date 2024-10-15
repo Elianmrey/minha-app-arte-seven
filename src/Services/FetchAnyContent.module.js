@@ -1,10 +1,10 @@
 import { options } from '../options/options.js'
 
 
-export default async function GetCardInfo() {
+export default async function GetCardInfo(url) {
  
   try {
-    const response = await fetch('https://api.themoviedb.org/3/discover/movie?language=pt-BR', options);
+    const response = await fetch(url, options);
     const data = await response.json();
     return data.results;
   } catch (err) {
