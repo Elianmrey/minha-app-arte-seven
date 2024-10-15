@@ -30,7 +30,7 @@ export default function Details({cardType}) {
                 async function fetchData() {
                     const fetchedImages = await GetCardInfo('https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=pt-BR&page=1&sort_by=popularity.desc');
                     setData(fetchedImages);
-//Continuar aqui
+//Continuar aqui===============================================
                 }
                 fetchData();
             } catch (err) {
