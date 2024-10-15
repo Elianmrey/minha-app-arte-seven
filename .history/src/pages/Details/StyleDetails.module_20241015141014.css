@@ -1,0 +1,13 @@
+body{
+    color: var(--textColor);
+    
+}
+.container
+{
+    padding: 20px;
+}
+
+.poster
+{
+    width: 100%;
+}

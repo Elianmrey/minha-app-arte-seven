@@ -1,0 +1,16 @@
+body{
+    color: var(--textColor);
+    
+}
+.container
+{
+    padding: 20px;
+}
+
+.poster
+{
+    width: 50%;
+    border-radius:20px;
+    border: groove indigo;
+    outline: solid ;
+}
