@@ -1,0 +1,49 @@
+body{
+    color: var(--textColor);
+    
+}
+.container
+{
+    display:flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+    align-Items:center;
+    
+}
+
+.poster
+{
+    width: 100%;
+    border-radius:20px;
+    border: groove indigo;
+    outline: solid rgb(54, 1, 107);
+}
+.overviewContainer
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    line-height: 25px;
+}
+
+@media(min-width:768px)
+{
+.poster {
+        width: 50%;
+        border-radius: 20px;
+        border: groove indigo;
+        outline: solid rgb(54, 1, 107);
+    }
+
+        .overviewContainer {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: justify;
+            line-height: 25px;
+        }
+}
