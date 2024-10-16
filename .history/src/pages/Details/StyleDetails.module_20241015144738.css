@@ -1,0 +1,26 @@
+body{
+    color: var(--textColor);
+    
+}
+.container
+{
+    padding: 20px;
+    justify-content: ;
+}
+
+.poster
+{
+    width: 100%;
+    border-radius:20px;
+    border: groove indigo;
+    outline: solid rgb(54, 1, 107);
+}
+.overviewContainer
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    line-height: 25px;
+}
