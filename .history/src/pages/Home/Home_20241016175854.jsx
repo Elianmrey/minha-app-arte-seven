@@ -25,7 +25,7 @@ export default function Home() {
                 setSearchTvResult(await searchResponse.filter(movie => movie.media_type === "tv"));
             } 
         } catch (error) {
-            console.error("Tivemos algum problema, vamos resolvê-lo em breve", error);
+            console.error("Tivemos algum problema, vamos resolvê-lo em breve", error)
         } 
     }
 
@@ -100,4 +100,3 @@ export default function Home() {
             </div>   
     );
 }
-//Completada a busca
