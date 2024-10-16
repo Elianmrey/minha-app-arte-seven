@@ -8,7 +8,9 @@ import GetCardInfo from '../../Services/FetchAnyContent.module.js';
 
 export default function Home() {
     
-    const [searchResults, setSearchResults] = useState('');
+    
+    // eslint-disable-next-line no-unused-vars
+    const [searchResults, setSearchResults] = useState([]); //Desenvolver a busca Hj durante o dia 
     
     function SearchGeralContent(term) {
         try {
@@ -33,7 +35,6 @@ export default function Home() {
         async function fetchData() {
             const fetchedData = await GetCardInfo('https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=pt-BR&page=1&sort_by=popularity.desc');
             setTvData(fetchedData);
-            console.log(fetchedData)
         }
 
         fetchData();
@@ -62,6 +63,7 @@ export default function Home() {
                 <SearchBar onSearch={SearchGeralContent} />
 
                 <div className={StyleLayout.filmsContainer}>
+                    
                     <h2 className={StyleLayout.titleFilms}>Filmes</h2>
                     <Card info={movieData} cardType="movies" />
                 </div>
