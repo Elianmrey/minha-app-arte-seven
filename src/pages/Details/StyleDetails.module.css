@@ -3,11 +3,13 @@
     color: var(--textColor);
     display:flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 0px;
     justify-content: center;
     align-Items:center;
-    /* border:solid; */
-    
+}
+.innerContainer
+{
+    padding:20px
 }
 .buttonBackContainer
 {

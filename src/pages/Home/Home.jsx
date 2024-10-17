@@ -1,4 +1,4 @@
-import NavBar from '../../components/navBar/NavBar.jsx';
+import NavBar from '../../components/navBarWithMenu/NavBarWithMenu.jsx';
 import Card from '../../components/cardFilms/Card.jsx';
 import StyleLayout from './layout.module.css';
 import SearchBar from '../../components/Search/SearchBar.jsx';

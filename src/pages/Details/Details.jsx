@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types"
 import StyleDetails from "./StyleDetails.module.css"
 import StarRating from "../../components/StarsRating/StarsRating.jsx";
+import CleanNavBar from "../../components/CleanNavBar/CleanNavBar.jsx"
 
 
 export default function Details({ cardType }) {
@@ -53,6 +54,10 @@ export default function Details({ cardType }) {
     
     return (
         <div className={StyleDetails.container} >
+            <CleanNavBar />
+            
+            <div className={StyleDetails.innerContainer}>
+
             <div className={StyleDetails.buttonBackContainer}>
                 <Link to="/"> <button className={StyleDetails.buttonBack}>
                 
@@ -114,7 +119,7 @@ export default function Details({ cardType }) {
             
             }
             
-
+            </div> 
         </div>
     )
 }

@@ -1,0 +1,75 @@
+.ContainerAll {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.082);
+  width: 100%;
+  justify-content: end;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  width:100%;
+  align-Items: center;
+  
+}
+
+
+.logo {
+  width: 40px;
+  height: auto;
+}
+
+.logoText {
+  margin-left: 10px;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+
+.ButtonsContainer {
+  display: flex;
+  align-items: center;
+}
+
+.MenuButton {
+  cursor: pointer;
+  display: flex;
+  width: 40px;
+}
+
+.backButton {
+  background-color: transparent;
+  width: 40px;
+  fill: #ae00ff;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  border:none;
+}
+
+@media (min-width: 768px) {
+ 
+  .ContainerAll
+  {
+    display:flex;
+    padding:0;
+    justify-content: center;
+   align-items: center;
+  }
+
+ .logoContainer p 
+ {
+  font-size: 1.7rem;
+  white-space: nowrap;
+  text-decoration: none;
+ }
+    .backButton,
+  .MenuButton {
+    display: none;
+    visibility:hidden;
+  }
+}
