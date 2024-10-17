@@ -33,7 +33,7 @@
 
 .iconBack
 {
-    fill: rebeccapurple;
+    fill: #e1c7fa;
     width: 40px;
 }
 
@@ -85,6 +85,5 @@ h1
 
         .overviewContainer {
             width: 50%;
-            
         }
 }
