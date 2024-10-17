@@ -1,14 +1,12 @@
-body{
-    color: var(--textColor);
-    
-}
 .container
 {
+    color: var(--textColor);
     display:flex;
     flex-direction: column;
     padding: 20px;
     justify-content: center;
     align-Items:center;
+    /* border:solid; */
     
 }
 .buttonBackContainer
@@ -46,6 +44,13 @@ body{
     border: groove indigo;
     outline: solid rgb(54, 1, 107);
 }
+h1
+{
+    font-size: 35px;
+    text-align: center;
+    margin: 15px;
+}
+
 .overviewContainer
 {
     width: 100%;
@@ -54,9 +59,20 @@ body{
     justify-content: center;
     text-align: justify;
     line-height: 25px;
+    text-indent: 15px;
+    margin: auto;
 }
 
-
+.ratingContainer,
+.genreContainer
+{
+    display:flex;
+    gap:15px;
+    margin: 20px auto;
+    width: 100%;
+    justify-content: center;
+    align-Items:center;
+}
 
 @media(min-width:768px)
 {

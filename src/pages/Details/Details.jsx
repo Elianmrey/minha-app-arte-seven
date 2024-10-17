@@ -48,7 +48,8 @@ export default function Details({ cardType }) {
     
     console.log(info);
     
-   
+    const genre = info.genres;
+    
     
     return (
         <div className={StyleDetails.container} >
@@ -65,19 +66,50 @@ export default function Details({ cardType }) {
             
             {
                 cardType === "tvShows" ?
+                    
                     <div>
                         <h1>{info.name}</h1>
+
                         <div className={StyleDetails.overviewContainer}>
-                        <p>{info.overview}</p>
+
+                            <p>Sinopse: {info.overview? info.overview: "Não Disponível"}</p>
                         <p>Nota: {info.vote_average}</p>
                         <p>Data de Lançamento: {info.first_air_date}</p>
                             <p>Episódios: {info.number_of_episodes}</p>
+                            <p>Temporadas: {info.number_of_seasons? info.number_of_seasons: "Não disponível"}</p>
                         </div>
-            </div> :
+                        
+                        <div className={StyleDetails.genreContainer}>
+                            <p>Genero:</p>
+                            {
+                                genre.map((item, index) =>
+                                (
+                                    <p key={index}>{item.name}</p>
+                                ))
+                            }
+                        </div>
+                    </div> :
+                    
                 <div>
-                    <h1>{info.title}</h1>
-                    <p>Sinopse: {info.overview}</p>
-                        <p>{<StarRating voteAverage={ info.vote_average } />}</p>
+                        <h1>{info.title}</h1>
+                        
+                        <div className={StyleDetails.overviewContainer}>
+
+                        <p>Sinopse:  {info.overview ? info.overview : "Não Disponível"}</p>
+                        </div>
+                        <div className={StyleDetails.genreContainer}>
+                            
+                            <p>Genero:</p>
+                        {
+                            genre.map((item, index) =>
+                            (
+                                <p key={index}>{item.name}</p>
+                            ))
+                            }
+                        </div>
+                        <div className={StyleDetails.ratingContainer}>
+                            <p>{<StarRating voteAverage={info.vote_average} />}</p>
+                            </div>
                     </div>
             
             }
