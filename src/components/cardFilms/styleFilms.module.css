@@ -5,6 +5,7 @@
   margin-top: 20px;
 }
 
+
 .cardContainer {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
@@ -48,6 +49,9 @@
 
 .data {
   font-size: 0.8rem;
+}
+a{
+  text-decoration: none;
 }
 
 @media (min-width: 768px) {
