@@ -14,7 +14,7 @@ export default function SearchBar({ onSearch }) {
 
     return (
         <div className={StyleSearch.Container}>
-            <h2>Buscar Filmes</h2>
+            <h2>Buscar Filmes e Series</h2>
             <div className={StyleSearch.ContainerSearch}>
                 <input
                     type="text"

@@ -52,6 +52,7 @@
 }
 a{
   text-decoration: none;
+  background: transparent;
 }
 
 @media (min-width: 768px) {
