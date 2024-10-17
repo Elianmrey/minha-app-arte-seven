@@ -39,13 +39,13 @@ export default function NavBar() {
       </div>
 
       <ul className={`${NavBarStyle.menu} ${isOpen ? NavBarStyle.menuOpen : NavBarStyle.menuClosed}`}>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Minha Conta</a></li>
-        <li><a href="#">Favoritos</a></li>
-        <li><a href="#">Meus filmes</a></li>
-        <li><a href="#">Lançamentos</a></li>
-        <li><a href="#">Gêneros</a></li>
-        <li><a href="#">Recomendados</a></li>
+        <li onClick={toggleMenu}><Link to="/">Home</Link></li>
+        <li onClick={toggleMenu}><a href="#">Minha Conta</a></li>
+        <li onClick={toggleMenu}><a href="#">Favoritos</a></li>
+        <li onClick={toggleMenu}><a href="#">Meus filmes</a></li>
+        <li onClick={toggleMenu}><a href="#">Lançamentos</a></li>
+        <li onClick={toggleMenu}><a href="#">Gêneros</a></li>
+        <li onClick={toggleMenu}><a href="#">Recomendados</a></li>
       </ul>
     </div>
   );

@@ -1,5 +1,5 @@
-import { useParams } from "react-router-dom";
-import GetCardInfo from "../../Services/FetchAnyContent.module.js";
+import { Link, useParams } from "react-router-dom";
+import { GetCardDetailsInfo } from "../../Services/FetchAnyContent.module.js";
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types"
 import StyleDetails from "./StyleDetails.module.css"
@@ -20,10 +20,10 @@ export default function Details({ cardType }) {
         async function fetchData() {
            
             try {
-                const urlValue = (cardType === 'movies') ? 'https://api.themoviedb.org/3/discover/movie?language=pt-BR' :
-                    'https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=pt-BR&page=1&sort_by=popularity.desc'
+                const urlValue = (cardType === 'movies') ? `https://api.themoviedb.org/3/movie/${id}?language=pt-BR` :
+                    `https://api.themoviedb.org/3/tv/${id}?language=pt-BR`
                 
-                const fetchedData = await GetCardInfo(urlValue);
+                const fetchedData = await GetCardDetailsInfo(urlValue);
                 setData(fetchedData);
                 
                 setLoading(false);
@@ -36,19 +36,32 @@ export default function Details({ cardType }) {
         }
         fetchData();
     },
-        [cardType]);
+        [cardType,id]);
             
-    const info = data.find((audiovisual) => (Number(audiovisual.id) === Number(id)));
+    const info = data
     const urlBase = 'https://image.tmdb.org/t/p/w500';
     
     if (loading) return (<div>Carregando</div>);
     if (err) return (<div className={ StyleDetails.error}>{err}</div>);
     if (!info) return (<div>Item não encontrado</div>);
+    
+    
     console.log(info);
+    
+   
+    
     return (
         <div className={StyleDetails.container} >
-
-            <img className={StyleDetails.poster} src={`${urlBase + info.backdrop_path}`} />
+            <div className={StyleDetails.buttonBackContainer}>
+                <Link to="/"> <button className={StyleDetails.buttonBack}>
+                
+                    <svg className={StyleDetails.iconBack} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path d="M177.5 414c-8.8 3.8-19 2-26-4.6l-144-136C2.7 268.9 0 262.6 0 256s2.7-12.9 7.5-17.4l144-136c7-6.6 17.2-8.4 26-4.6s14.5 12.5 14.5 22l0 72 288 0c17.7 0 32 14.3 32 32l0 64c0 17.7-14.3 32-32 32l-288 0 0 72c0 9.6-5.7 18.2-14.5 22z" />
+                    </svg>
+                    
+                </button></Link>
+        </div>
+            <img className={StyleDetails.poster} src={info.backdrop_path? urlBase + info.backdrop_path : urlBase + info.poster_path} />
             
             {
                 cardType === "tvShows" ?
