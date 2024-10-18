@@ -5,6 +5,7 @@ import SearchBar from '../../components/Search/SearchBar.jsx';
 import { useEffect, useState } from 'react';
 import { GetSearchResults } from '../../Services/SearchContent.module.js';
 import GetCardInfo from '../../Services/FetchAnyContent.module.js';
+import { GetFromLocalStrg, SaveToLocalStrg } from '../../Services/LocalStorageManagement.js';
 
 export default function Home() {
 
@@ -48,15 +49,16 @@ export default function Home() {
         fetchData();
     }, []);
       
-
-    const [favoriteList, setFavoriteList] = useState([]);
+    const favorites = GetFromLocalStrg("@favoriteList");
+    const [favoriteList, setFavoriteList] = useState([...favorites]);
 
     function HandleFavoriteClick(id) {
         favoriteList.includes(id) ? (setFavoriteList(favoriteList.filter(itemId => itemId != id)))
             :
             setFavoriteList([...favoriteList, id]);
-
     }
+   
+    SaveToLocalStrg("@favoriteList", favoriteList);
     
     return (
         
