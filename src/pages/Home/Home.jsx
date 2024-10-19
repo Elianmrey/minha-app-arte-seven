@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { GetSearchResults } from '../../Services/SearchContent.module.js';
 import GetCardInfo from '../../Services/FetchAnyContent.module.js';
 import { GetFromLocalStrg, SaveToLocalStrg } from '../../Services/LocalStorageManagement.js';
-import FavList from '../../components/FavsList/FavoritesList.jsx';
+// import FavList from '../../components/FavsList/FavoritesList.jsx';
 
 export default function Home() {
 
@@ -55,11 +55,11 @@ export default function Home() {
     const [favoriteList, setFavoriteList] = useState([...favorites]);
 
 
-    function HandleFavoriteClick(id) {
+    function HandleFavoriteClick(item) {
 
-        favoriteList.includes(id) ? (setFavoriteList(favoriteList.filter(itemId => itemId != id)))
+        favoriteList.find(itemFav=>itemFav.id === item.id) ? (setFavoriteList(favoriteList.filter(itemId => itemId.id != item.id)))
             :
-            setFavoriteList([...favoriteList, id]);
+            setFavoriteList([...favoriteList, item]);
         
     }
 
@@ -73,7 +73,7 @@ export default function Home() {
                     <NavBar />
                 </div>
             {/* <div className={StyleLayout.container}>
-                <FavList tvList={tvData} filmsList={movieData} HandleFavoriteClick={ HandleFavoriteClick}/>
+                // <FavList tvList={tvData} filmsList={movieData} HandleFavoriteClick={ HandleFavoriteClick}/> 
              </div> */}
 
             <div className={StyleLayout.cardsContainer}>

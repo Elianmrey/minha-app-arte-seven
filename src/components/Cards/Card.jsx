@@ -18,9 +18,9 @@ export default function FilmCard({ info, cardType, favoriteList, HandleFavoriteC
 
               <div key={index} className={CardStyle.cardContainer}>
                 
-                <div className={CardStyle.favContainer} onClick={() => HandleFavoriteClick(item.id)}>
+                <div className={CardStyle.favContainer} onClick={() => HandleFavoriteClick(item)}>
                   {
-                    favoriteList.includes(item.id) ?
+                    favoriteList.find(itemFav=>itemFav.id === item.id) ?
                       <div>
                         <span style={{ textShadow: "2px 3px 20px #d00000" }}>❤️</span>
                       </div>
@@ -67,9 +67,9 @@ export default function FilmCard({ info, cardType, favoriteList, HandleFavoriteC
 
               <div key={index} className={CardStyle.cardContainer}>
 
-                <dir className={CardStyle.favContainer} onClick={()=>HandleFavoriteClick(item.id)}>
+                <dir className={CardStyle.favContainer} onClick={()=>HandleFavoriteClick(item)}>
                   {
-                    favoriteList.includes(item.id) ?
+                    favoriteList.find(itemFav => itemFav.id === item.id) ?
                       <div>
                         <span style={{ textShadow: "2px 3px 20px 10px red" }}>❤️</span>
                       </div>
