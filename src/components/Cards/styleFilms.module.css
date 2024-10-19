@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 20px;
+  user-select: none;
 }
 
 
@@ -88,10 +89,10 @@ a{
   transform: scale(1.05);
 }
   .favContainer span:hover {
-      cursor: url("../img/cursor.png") -16 -16, auto;
+      cursor: url("../img/cursor-no-shadow.png") -16 -16, auto;
     }
   
     .favContainer span:active {
-      cursor: url("../img/cursor-no-shadow.png") -16 -16, auto;
+     cursor: url("../img/cursor.png") -16 -16, auto;
     }
 }
