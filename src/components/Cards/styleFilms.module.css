@@ -16,9 +16,7 @@
   transition: transform 0.3s;
 }
 
-.cardContainer:hover {
-  transform: scale(1.05);
-}
+
 .favContainer
 {
   display: flex;
@@ -29,12 +27,14 @@
   width:inherit;
   position: relative;
   top:20px;
+  user-select: none;
 }
 
 .favContainer span
 {
   font-size: 23px;
 }
+
 .imgContainer {
   width: 100%;
   height: auto;
@@ -80,4 +80,18 @@ a{
   .generalContainer {
     justify-content: space-around;
   }
+}
+
+@media(pointer: fine)
+{
+  .cardContainer:hover {
+  transform: scale(1.05);
+}
+  .favContainer span:hover {
+      cursor: url("../img/cursor.png") -16 -16, auto;
+    }
+  
+    .favContainer span:active {
+      cursor: url("../img/cursor-no-shadow.png") -16 -16, auto;
+    }
 }
