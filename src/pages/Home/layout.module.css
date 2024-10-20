@@ -27,10 +27,14 @@
   color: #fff;
 }
 
+
 .navigationBarContainer {
   flex: 0 0 auto;
 }
-
+.searchContainer
+{
+  padding: 20px 30px;
+}
 .cardsContainer {
   flex: 1;
   overflow-y: auto;

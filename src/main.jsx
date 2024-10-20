@@ -9,8 +9,8 @@ import './MainLayout.css'
 
 const routes = createBrowserRouter([
   { element: <Home />, path: '/' },
-  { element: <Details cardType='movies' />, path: '/movies/details/:id' },
-  { element: <Details cardType='tvShows' />, path: '/tv/details/:id' },
+  { element: <Details cardType='movies' whereToGo='/'/>, path: '/movies/details/:id' },
+  { element: <Details cardType='tvShows' whereToGo='/' />, path: '/tv/details/:id' },
   { element: <FavList />, path: '/favlist' },
   { element: <NotFound />, path: '/*' }
 

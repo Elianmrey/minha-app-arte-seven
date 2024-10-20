@@ -73,10 +73,11 @@ export default function Home() {
                     <NavBar />
                 </div>
             
-
-            <div className={StyleLayout.cardsContainer}>
-                
+                <div className={StyleLayout.searchContainer}>
                     <SearchBar onSearch={SearchGeralContent} />
+                </div>
+            <div className={StyleLayout.cardsContainer}>
+              
                 {
                     searchMovieResults.length > 0 || searchTvResult.length > 0 ? (
                         
