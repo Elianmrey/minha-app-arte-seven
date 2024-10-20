@@ -45,8 +45,12 @@ export default function Details({ cardType, whereToGo }) {
     if (loading) return (<div>Carregando</div>);
     if (err) return (<div className={ StyleDetails.error}>{err}</div>);
     if (!info) return (<div>Item não encontrado</div>);
-
-const genre = info.genres;
+    
+    
+    console.log(info);
+    
+    const genre = info.genres;
+    
     
     return (
         <div className={StyleDetails.container} >

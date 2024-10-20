@@ -65,6 +65,8 @@ export default function Home() {
 
 
     SaveToLocalStrg("@favoriteList", favoriteList);
+
+    // console.log(movieData);
     
     return (
         

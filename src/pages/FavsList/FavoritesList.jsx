@@ -16,12 +16,14 @@ export default function FavList() {
         const tvShows = [];
         const movies = [];
         GetFromLocalStrg('@favoriteList').forEach(element => {
-            if (element.first_air_date) tvShows.push(element) 
-            else if (!element.first_air_date) movies.push(element); 
+            if (element.number_of_episodes) tvShows.push(element) 
+            else if (!element.number_of_episodes) movies.push(element); //Needs Work
         });
         setDataTvList(tvShows);
         setDataMovieList(movies);
         
+        console.log("TV SERIES",tvShows);
+        console.log("FILMES",movies)
     }, []);
 
     
@@ -36,8 +38,8 @@ export default function FavList() {
         const tvShows = [];
         const movies = [];
         GetFromLocalStrg('@favoriteList').forEach(element => {
-            if (element.first_air_date) tvShows.push(element)
-            else if (!element.first_air_date) movies.push(element);
+            if (element.number_of_episodes) tvShows.push(element)
+            else if (!element.number_of_episodes) movies.push(element);
         });
         setDataTvList(tvShows);
         setDataMovieList(movies);
