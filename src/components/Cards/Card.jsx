@@ -110,6 +110,6 @@ export default function FilmCard({ info, cardType, favoriteList, HandleFavoriteC
 FilmCard.propTypes = {
   info: PropTypes.array.isRequired,
   cardType: PropTypes.string.isRequired,
-  favoriteList: PropTypes.array.isRequired,
+  favoriteList: PropTypes.array,
   HandleFavoriteClick: PropTypes.func.isRequired,
 };
