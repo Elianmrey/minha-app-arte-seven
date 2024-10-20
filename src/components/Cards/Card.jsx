@@ -2,6 +2,7 @@ import CardStyle from './styleFilms.module.css';
 import PropTypes from 'prop-types';
 import StarRating from '../StarsRating/StarsRating.jsx';
 import { Link } from 'react-router-dom';
+import ButtonForRent from '../ButtonForRent/ButtonForRent.jsx';
 
 
 
@@ -17,7 +18,7 @@ export default function FilmCard({ info, cardType, favoriteList, HandleFavoriteC
             info.map((item, index) => (
 
               <div key={index} className={CardStyle.cardContainer}>
-                
+               
                 <div className={CardStyle.favContainer} onClick={() => HandleFavoriteClick(item)}>
                   {
                     favoriteList.find(itemFav=>itemFav.id === item.id) ?
@@ -46,9 +47,11 @@ export default function FilmCard({ info, cardType, favoriteList, HandleFavoriteC
                     <span className={CardStyle.data}>Lançamento: {item.release_date}</span>
                     <span className={CardStyle.data}><StarRating voteAverage={item.vote_average} /></span>
                   </div>
-
+                
                 </Link>
-
+                <div className={CardStyle.buttonContainer}>
+                  <ButtonForRent whatWillRent={`/movies/details/${item.id}`} whatIsIt={'Filme'} />
+                    </div>
               </div>
             ))
           ) : (
@@ -66,7 +69,7 @@ export default function FilmCard({ info, cardType, favoriteList, HandleFavoriteC
             info.map((item, index) => (
 
               <div key={index} className={CardStyle.cardContainer}>
-
+                
                 <dir className={CardStyle.favContainer} onClick={()=>HandleFavoriteClick(item)}>
                   {
                     favoriteList.find(itemFav => itemFav.id === item.id) ?
@@ -95,6 +98,9 @@ export default function FilmCard({ info, cardType, favoriteList, HandleFavoriteC
                     <span className={CardStyle.data}><StarRating voteAverage={item.vote_average} /></span>
                   </div>
                 </Link>
+                <div className={CardStyle.buttonContainer}>
+                  <ButtonForRent whatWillRent={`/movies/details/${item.id}`} whatIsIt={'Serie'} />
+                </div>
               </div>
             ))
           ) : (

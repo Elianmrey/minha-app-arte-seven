@@ -4,6 +4,7 @@
   justify-content: center;
   margin-top: 20px;
   user-select: none;
+  width: 100%;
 }
 
 
@@ -17,8 +18,9 @@
   transition: transform 0.3s;
   display: flex;
   flex-direction: column;
- 
-}
+  justify-content: space-evenly;
+  align-Items:center;
+ }
 
 
 .favContainer
@@ -32,6 +34,7 @@
   position: relative;
   top:20px;
   user-select: none;
+ 
 }
 
 .favContainer span

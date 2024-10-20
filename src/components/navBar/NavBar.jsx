@@ -1,4 +1,4 @@
-import NavBarStyle from './style.module.css';
+import NavBarStyle from './NavBarStyle.module.css';
 import svgimg from '../img/logo.svg';
 import PropTypes from 'prop-types';
 import img from '../../components/img/paranoidMenu.svg';
