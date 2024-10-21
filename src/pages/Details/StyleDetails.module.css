@@ -57,10 +57,10 @@
     justify-content: center;
     border-radius:10px;
 }
-
 .buttonBack:active {
     box-shadow: inset 0px 0px 20px 1.5px #000000;
 }
+
 .iconBack
 {
     fill: #e1c7fa;
@@ -129,6 +129,10 @@ h1
         background-color: #9c39ec;
         cursor: url('../img/cursor-no-shadow.png') -16 -16 auto;
         box-shadow: 0px 0px 15px 1.5px #b16df5;
+        
     }
+        .buttonBack:active {
+            box-shadow: inset 0px 0px 20px 1.5px #000000;
+        }
 }
 
