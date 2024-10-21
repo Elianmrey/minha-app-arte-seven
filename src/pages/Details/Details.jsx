@@ -5,7 +5,9 @@ import PropTypes from "prop-types"
 import StyleDetails from "./StyleDetails.module.css"
 import StarRating from "../../components/StarsRating/StarsRating.jsx";
 import NavBar from "../../components/navBar/NavBar.jsx";
-
+import MultifaceButton from "../../components/MultifaceticButton/MultifaceticButton.jsx"
+import AvalModal from "../../components/AvalModal/AvalModal.jsx";
+import AvaliationComments from "../../components/AvaliationComments/AvaliationComments.jsx"
 
 export default function Details({ cardType, whereToGo }) {
 
@@ -13,6 +15,14 @@ export default function Details({ cardType, whereToGo }) {
     const [err, setErr] = useState(null)
     const [loading, setLoading] = useState(true)
     const { id } = useParams();
+
+
+    const [avaliations, setAvaliations] = useState([])
+
+    //Enviando contribuição formada para o Feed de contribuições (O vetor de Contribuições)
+    function Avaliate(avaliation) {
+        setAvaliations([...avaliations, avaliation]);
+    }
 
     //Carregando os estados dos Cards segundo o tipo da Card 
     useEffect(() => {
@@ -77,10 +87,13 @@ export default function Details({ cardType, whereToGo }) {
                             <div className={StyleDetails.overviewContainer}>
 
                                 <p>Sinopse: {info.overview ? info.overview : "Não Disponível"}</p>
-                                <p>Nota: {info.vote_average}</p>
                                 <p>Data de Lançamento: {info.first_air_date}</p>
                                 <p>Episódios: {info.number_of_episodes}</p>
                                 <p>Temporadas: {info.number_of_seasons ? info.number_of_seasons : "Não disponível"}</p>
+                                <div className={StyleDetails.ratingContainer}>
+                                    <div>{<StarRating voteAverage={info.vote_average} />}</div>
+                                </div>
+
                             </div>
 
                             <div className={StyleDetails.genreContainer}>
@@ -92,6 +105,9 @@ export default function Details({ cardType, whereToGo }) {
                                     ))
                                 }
                             </div>
+
+                            <MultifaceButton whatWillRent={`/movies/details/${info.id}`} whatIsIt={'Avaliar Serie'} />
+
                         </div> :
 
                         <div>
@@ -114,6 +130,14 @@ export default function Details({ cardType, whereToGo }) {
                             <div className={StyleDetails.ratingContainer}>
                                 <div>{<StarRating voteAverage={info.vote_average} />}</div>
                             </div>
+                            <div className={StyleDetails.buttonsContainer}>
+                                <MultifaceButton whatWillRent={`/movies/details/${info.id}`} whatIsIt={'Avaliar Filme'} />
+                                <MultifaceButton whatWillRent={`/movies/details/${info.id}`} whatIsIt={'Alugar Filme'} />
+                            </div>
+
+                            <AvalModal avaliate={Avaliate} />
+                            {/* <AvaliationComments contributionVector={avaliations} /> */}
+
                         </div>
 
                 }

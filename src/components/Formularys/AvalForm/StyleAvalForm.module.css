@@ -1,0 +1,69 @@
+*::placeholder
+{
+    color: #ccc;
+}
+.container
+{
+    width: 100%;
+    height: 100%;
+    padding:20px;    
+}
+
+.form
+{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+h2{
+    margin-left: 40px;
+}
+.label
+{
+    margin: 30px auto 10px 20px ;
+}
+
+.userName
+{
+    width: clamp(32%, 50%, 50% );
+    height: 45px;
+    margin: 20px 40px;
+    padding: 20px;
+}
+
+.fieldNoteValue
+{
+    margin: 20px 40px;
+    width: 50%;
+}
+.description
+{ 
+    width:auto;
+    height: 200px;
+    margin: auto 40px 20px;
+    resize: none;
+    padding: 20px;
+    background-color:#ffffff4b;
+    border-radius: 10px;
+}
+
+.buttonContainer
+{
+    width: 90%;
+    height:60px;
+    display: flex;
+    margin-left: 40px;
+    align-items: center;
+    justify-content: end;
+    
+}
+.button
+{
+    width: 120px;
+    height: 50px;
+    margin-left: 40px;
+    border-radius: 25px;
+    background-color:var(--successButtonColor);
+    color:var(--textColor)
+}

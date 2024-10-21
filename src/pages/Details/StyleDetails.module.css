@@ -109,6 +109,13 @@ h1
     align-Items:center;
 }
 
+.buttonsContainer
+{
+    display:flex;
+    width: fit-content;
+    margin: auto;
+}
+
 @media(min-width:768px)
 {
 .poster {

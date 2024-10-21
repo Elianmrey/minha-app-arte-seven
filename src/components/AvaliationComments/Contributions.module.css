@@ -1,0 +1,71 @@
+.contributionsPanel
+{
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    margin: 20px auto;
+}
+.contributionsTitle
+{
+    margin-top: 40px;
+}
+.contributionContainer
+{
+    background-color: var(--commentBgColor);
+    padding: 1rem;
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+
+    
+}
+
+.contributionAuthor
+{
+    width:100%;
+    height: 40px;
+    display: flex;
+    align-items:center;
+    justify-content: start;
+
+
+ }
+ .contributionText
+ {
+    width: 100%;
+    text-align: justify;
+    padding:15px;
+ }
+
+ .LikeContainer {
+     display: flex;
+     gap: 10px;
+     align-items: center;
+     justify-content: end;
+     width: 100%;
+     height: 40px;
+     white-space: nowrap;
+ }
+
+ .icon {
+     width: 20px;
+     fill: white;
+     cursor: grab;
+ }
+
+ @media(min-width:768px)
+ {
+    .contributionsPanel
+    {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+    }
+    .contributionContainer {
+        
+        flex: 1;
+        }
+ }

@@ -6,7 +6,7 @@ export default function ButtonForRent({ whatWillRent, whatIsIt }) {
 
     return (
         <div className={ButtonStyle.buttonContainer}>
-            <Link to={whatWillRent}> <button className={ButtonStyle.button}>Alugar { whatIsIt }</button></Link>  
+            <Link to={whatWillRent}> <button className={ButtonStyle.button}>{ whatIsIt }</button></Link>  
         </div>
     )
 }

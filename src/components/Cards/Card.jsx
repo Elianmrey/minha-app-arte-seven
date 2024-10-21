@@ -2,7 +2,7 @@ import CardStyle from './styleFilms.module.css';
 import PropTypes from 'prop-types';
 import StarRating from '../StarsRating/StarsRating.jsx';
 import { Link } from 'react-router-dom';
-import ButtonForRent from '../ButtonForRent/ButtonForRent.jsx';
+import ButtonForRent from '../MultifaceticButton/MultifaceticButton.jsx';
 
 
 
@@ -50,7 +50,7 @@ export default function FilmCard({ info, cardType, favoriteList, HandleFavoriteC
                 
                 </Link>
                 <div className={CardStyle.buttonContainer}>
-                  <ButtonForRent whatWillRent={`/movies/details/${item.id}`} whatIsIt={'Filme'} />
+                  <ButtonForRent whatWillRent={`/movies/details/${item.id}`} whatIsIt={'Alugar Filme'} />
                     </div>
               </div>
             ))
@@ -99,7 +99,7 @@ export default function FilmCard({ info, cardType, favoriteList, HandleFavoriteC
                   </div>
                 </Link>
                 <div className={CardStyle.buttonContainer}>
-                  <ButtonForRent whatWillRent={`/movies/details/${item.id}`} whatIsIt={'Serie'} />
+                  <ButtonForRent whatWillRent={`/movies/details/${item.id}`} whatIsIt={'Alugar Serie'} />
                 </div>
               </div>
             ))
