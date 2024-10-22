@@ -36,6 +36,21 @@
 {
     padding:20px
 }
+
+.avalModalContainer
+{
+    display: flex;
+    padding:0;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    
+    align-items:center;
+    width: 100%;
+    margin: auto;
+    
+}
+
 .buttonBackContainer
 {
     display: flex;
@@ -114,6 +129,14 @@ h1
     display:flex;
     width: fit-content;
     margin: auto;
+}
+
+.commentsContainer
+{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 80%;
 }
 
 @media(min-width:768px)

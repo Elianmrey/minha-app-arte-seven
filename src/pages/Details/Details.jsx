@@ -5,25 +5,52 @@ import PropTypes from "prop-types"
 import StyleDetails from "./StyleDetails.module.css"
 import StarRating from "../../components/StarsRating/StarsRating.jsx";
 import NavBar from "../../components/navBar/NavBar.jsx";
-import MultifaceButton from "../../components/MultifaceticButton/MultifaceticButton.jsx"
+import ButtonRent from "../../components/ButtonRent/ButtonRent.jsx"
 import AvalModal from "../../components/AvalModal/AvalModal.jsx";
 import AvaliationComments from "../../components/AvaliationComments/AvaliationComments.jsx"
+import ButtonAvaliator from "../../components/ButtonAvaliator/ButtonAvaliator.jsx"
+import { SaveToLocalStrg, GetFromLocalStrg } from "../../Services/LocalStorageManagement.js"
 
 export default function Details({ cardType, whereToGo }) {
 
     const [data, setData] = useState([]);
-    const [err, setErr] = useState(null)
-    const [loading, setLoading] = useState(true)
+    const [err, setErr] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [modalVisible,setModalVisible] = useState(false);
     const { id } = useParams();
 
 
-    const [avaliations, setAvaliations] = useState([])
+    
+    //Salvando comentarios no LocalStorage para não perder as resenhas de usuários 
+    const [avaliations, setAvaliations] = useState([]);
+    const commentsList = GetFromLocalStrg('@avaliations');
+    const avaliationsTrated = commentsList.filter(items => items !== id);
+    
+    
+    SaveToLocalStrg('@avaliations', [...[id, ...avaliationsTrated]]);
+    
+    ///NEEDS WORK
+  
+
+    
+    
+    
+
+
 
     //Enviando contribuição formada para o Feed de contribuições (O vetor de Contribuições)
     function Avaliate(avaliation) {
         setAvaliations([...avaliations, avaliation]);
     }
 
+    //Função para fechar o modal
+    function closeModal() {
+        setModalVisible(false);
+    }
+    //Função para abrir o modal
+    function openModal() {
+        setModalVisible(true);
+        }
     //Carregando os estados dos Cards segundo o tipo da Card 
     useEffect(() => {
         setLoading(true);
@@ -59,6 +86,8 @@ export default function Details({ cardType, whereToGo }) {
 
     const genre = info.genres;
 
+   
+
     return (
         <div className={StyleDetails.container} >
             <div className={StyleDetails.navBarContainer} >
@@ -75,13 +104,21 @@ export default function Details({ cardType, whereToGo }) {
 
                     </button></Link>
                 </div>
-                <div className={StyleDetails.posterContainer}>
-                    <img className={StyleDetails.poster} src={info.backdrop_path ? urlBase + info.backdrop_path : urlBase + info.poster_path} />
-                </div>
+                
                 {
                     cardType === "tvShows" ?
 
                         <div>
+                            {
+                                modalVisible ?
+                                    <div className={StyleDetails.avalModalContainer}>
+                                        <AvalModal avaliate={Avaliate} CloseModalOnButtonClicked={closeModal} />
+                                    </div> : false
+                            }
+                            <div className={StyleDetails.posterContainer}>
+                                <img className={StyleDetails.poster} src={info.backdrop_path ? urlBase + info.backdrop_path : urlBase + info.poster_path} />
+                            </div>
+
                             <h1>{info.name}</h1>
 
                             <div className={StyleDetails.overviewContainer}>
@@ -105,12 +142,33 @@ export default function Details({ cardType, whereToGo }) {
                                     ))
                                 }
                             </div>
+                            <div className={StyleDetails.buttonsContainer}>
+                            <ButtonRent whatWillRent={`/movies/details/${id}`} whatIsIt={'Alugar Filme'} />
+                            
+                            <ButtonAvaliator whatIsIt={'Avaliar Serie'} eventClick={openModal} />
+                        </div>
+                            <div className={StyleDetails.commentsContainer}>
+                                <AvaliationComments contributionVector={avaliationsTrated} />
+                            </div>
 
-                            <MultifaceButton whatWillRent={`/movies/details/${info.id}`} whatIsIt={'Avaliar Serie'} />
-
-                        </div> :
+                        </div>
+                        
+                        :
 
                         <div>
+
+                            {
+                                modalVisible ?
+                                    <div className={StyleDetails.avalModalContainer}>
+                                        <AvalModal avaliate={Avaliate} CloseModalOnButtonClicked={closeModal} />
+                                    </div> : false
+                            }
+
+                            
+                            <div className={StyleDetails.posterContainer}>
+                                <img className={StyleDetails.poster} src={info.backdrop_path ? urlBase + info.backdrop_path : urlBase + info.poster_path} />
+                            </div>
+
                             <h1>{info.title}</h1>
 
                             <div className={StyleDetails.overviewContainer}>
@@ -131,15 +189,17 @@ export default function Details({ cardType, whereToGo }) {
                                 <div>{<StarRating voteAverage={info.vote_average} />}</div>
                             </div>
                             <div className={StyleDetails.buttonsContainer}>
-                                <MultifaceButton whatWillRent={`/movies/details/${info.id}`} whatIsIt={'Avaliar Filme'} />
-                                <MultifaceButton whatWillRent={`/movies/details/${info.id}`} whatIsIt={'Alugar Filme'} />
+                                
+                                <ButtonRent whatWillRent={`/movies/details/${info.id}`} whatIsIt={'Alugar Filme'} />
+                                
+                                <ButtonAvaliator whatIsIt={'Avaliar Filme'} eventClick={openModal} />
+
                             </div>
-
-                            <AvalModal avaliate={Avaliate} />
-                            {/* <AvaliationComments contributionVector={avaliations} /> */}
-
+                           
+                            <div className={StyleDetails.commentsContainer}>
+                                <AvaliationComments contributionVector={avaliationsTrated} />
+                            </div>
                         </div>
-
                 }
 
             </div>

@@ -1,0 +1,9 @@
+.AvalContainer
+{
+    background: linear-gradient(125deg, #090F28, #371743);
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    border: solid #c394f3;
+    margin: auto;
+}

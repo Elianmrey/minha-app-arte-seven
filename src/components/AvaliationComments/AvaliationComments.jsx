@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import StyleContrib from './Contributions.module.css'
 import PropTypes from 'prop-types'
+import StarRating from '../StarsRating/StarsRating'
 
 
 export default function UsersContributions({ contributionVector })
@@ -28,7 +29,7 @@ export default function UsersContributions({ contributionVector })
                        <strong>@{contribution.author} </strong>▸▸▸  {contribution.date}
                     </span>
                         </div>
-                        <span className={StyleContrib.contributionText}>{contribution.noteValue}</span>
+                        <span className={StyleContrib.contributionText}>Nota  {<StarRating voteAverage={contribution.note} />}</span>
                         <span className={StyleContrib.contributionText}>
                             {contribution.description}
                     </span>

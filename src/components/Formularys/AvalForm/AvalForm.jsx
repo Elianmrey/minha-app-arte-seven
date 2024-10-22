@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 
 
-export default function ContributionForm({ avaliation }) {
+export default function ContributionForm({ avaliation, CloseModalOnButtonClicked }) {
     
     
     const [avaliations, setAvaliations] = useState({
@@ -26,7 +26,11 @@ export default function ContributionForm({ avaliation }) {
     }
 
     function ContributeToFeed() {
-        if (avaliations.name != "" && avaliations.description != "" && avaliations.note >= 2 && avaliations.note <= 10 ) {
+        if (avaliations.name != "" &&
+            avaliations.description != "" &&
+            avaliations.note >= 2 &&
+            avaliations.note <= 10)
+        {
             avaliation({
                 ...avaliations,
                 date: new Date().toLocaleDateString('pt-BR'),
@@ -38,6 +42,7 @@ export default function ContributionForm({ avaliation }) {
                 note: '',
                 description: ''
             });
+            CloseModalOnButtonClicked();
         } else { 
             alert('Preencha todos os campos para contribuir.');
         }
@@ -69,6 +74,8 @@ export default function ContributionForm({ avaliation }) {
 }
 
 ContributionForm.propTypes = {
-    avaliation: PropTypes.func.isRequired
+    avaliation: PropTypes.func.isRequired,
+    CloseModalOnButtonClicked: PropTypes.func.isRequired,
+    
   
 }

@@ -1,0 +1,35 @@
+
+
+.buttonContainer
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+}
+.button
+{
+    background-color: #680391;
+    color:#f5f5f5;
+    width: 90%;
+    height: 40px;
+    padding: 0px 20px;
+    margin: 10px;
+    border-radius: 20px;  
+    text-rendering: optimizeLegibility;
+    font-size: clamp(1rem , 1.5vw, 1rem);
+    white-space: nowrap;
+    border:none;
+}
+
+@media(pointer:fine) {
+    .button:hover {
+        background-color: #9c39ec;
+        cursor: url('../img/cursor-no-shadow.png') -16 -16 auto;
+        box-shadow: 0px 0px 15px 1.5px #b16df5;
+    }
+}
+
+.button:active {
+    box-shadow: inset 0px 0px 20px 1.5px #000000;
+}

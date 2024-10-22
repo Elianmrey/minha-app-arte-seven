@@ -2,7 +2,7 @@ import CardStyle from './styleFilms.module.css';
 import PropTypes from 'prop-types';
 import StarRating from '../StarsRating/StarsRating.jsx';
 import { Link } from 'react-router-dom';
-import ButtonForRent from '../MultifaceticButton/MultifaceticButton.jsx';
+import ButtonForRent from '../ButtonRent/ButtonRent.jsx';
 
 
 

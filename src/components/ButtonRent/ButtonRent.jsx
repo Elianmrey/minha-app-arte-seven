@@ -1,4 +1,4 @@
-import ButtonStyle from "./StyleButtonForRent.module.css"
+import ButtonStyle from "./StyleButtonRent.module.css"
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
