@@ -5,6 +5,8 @@
         font-size: x-large;
         color: #ffd900;
         user-select: none;
+        width: fit-content;
+        height: fit-content;
     }
 .Container span
 {

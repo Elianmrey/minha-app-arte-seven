@@ -6,4 +6,14 @@
     border-radius: 20px;
     border: solid #c394f3;
     margin: auto;
+    width: 100%;
+    outline: #9039e7 groove;
+}
+
+@media(min-width:768px)
+{
+    .AvalContainer
+    {
+        width: 600px;
+   }
 }

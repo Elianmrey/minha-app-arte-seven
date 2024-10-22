@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 
 
-export default function ContributionForm({ avaliation, CloseModalOnButtonClicked }) {
+export default function AvaliationForm({ avaliation, CloseModalOnButtonClicked }) {
     
     
     const [avaliations, setAvaliations] = useState({
@@ -73,7 +73,7 @@ export default function ContributionForm({ avaliation, CloseModalOnButtonClicked
         )
 }
 
-ContributionForm.propTypes = {
+AvaliationForm.propTypes = {
     avaliation: PropTypes.func.isRequired,
     CloseModalOnButtonClicked: PropTypes.func.isRequired,
     

@@ -22,12 +22,11 @@ export default function Details({ cardType, whereToGo }) {
 
    
     //Salvando comentarios no LocalStorage para não perder as resenhas de usuários 
-    const comments = GetFromLocalStrg('@avaliations')
+    const comments = GetFromLocalStrg('@'+id)
     const [avaliations, setAvaliations] = useState([...comments]);
-    SaveToLocalStrg('@avaliations', [...[id, ...avaliations]]);
-    const avaliationsTrated = avaliations.filter(items => items !== id);
-  
-
+    SaveToLocalStrg('@'+id, [...avaliations]) 
+    
+    
     //Enviando contribuição formada para o Feed de contribuições (O vetor de Contribuições)
     function Avaliate(avaliation) {
         setAvaliations([...avaliations, avaliation]);
@@ -40,7 +39,8 @@ export default function Details({ cardType, whereToGo }) {
     //Função para abrir o modal
     function openModal() {
         setModalVisible(true);
-        }
+    }
+    
     //Carregando os estados dos Cards segundo o tipo da Card 
     useEffect(() => {
         setLoading(true);
@@ -138,7 +138,7 @@ export default function Details({ cardType, whereToGo }) {
                             <ButtonAvaliator whatIsIt={'Avaliar Serie'} eventClick={openModal} />
                         </div>
                             <div className={StyleDetails.commentsContainer}>
-                                <AvaliationComments contributionVector={avaliationsTrated} />
+                                <AvaliationComments contributionVector={avaliations} />
                             </div>
 
                         </div>
@@ -187,7 +187,7 @@ export default function Details({ cardType, whereToGo }) {
                             </div>
                            
                             <div className={StyleDetails.commentsContainer}>
-                                <AvaliationComments contributionVector={avaliationsTrated} />
+                                <AvaliationComments contributionVector={avaliations} />
                             </div>
                         </div>
                 }

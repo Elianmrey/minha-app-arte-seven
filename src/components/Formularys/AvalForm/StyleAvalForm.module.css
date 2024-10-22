@@ -4,10 +4,9 @@
 }
 .container
 {
-    width: 600px;
+    width: 100%;
     height: fit-content;
     padding:20px;    
-   
 }
 
 .form
