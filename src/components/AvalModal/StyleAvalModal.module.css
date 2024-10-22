@@ -8,7 +8,35 @@
     margin: auto;
     width: 100%;
     outline: #9039e7 groove;
+    user-select: none;
 }
+
+.closeButtonContainer
+{
+    height:40px;
+    width: 100%;
+    display: flex;
+    padding: 5px;
+    box-shadow: 5px 0px 10px#1b012b;
+    justify-content: end;
+    background:linear-gradient(145deg,#6602a0dd, #090F28);
+    border-radius: 15px;
+    border-bottom: solid #ac5dec 2px;
+}
+.closeButton
+{
+    width: 35px;
+    fill: #bd58ec;
+}
+.closeButton:hover {
+    width: 35px;
+    scale: 1.05;
+}
+.closeButton:active {
+    width: 35px;
+    scale: 1.0; 
+}
+
 
 @media(min-width:768px)
 {

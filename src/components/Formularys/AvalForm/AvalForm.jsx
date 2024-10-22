@@ -66,7 +66,9 @@ export default function AvaliationForm({ avaliation, CloseModalOnButtonClicked }
                     <textarea placeholder='Descreva sua contribuição aqui' name="description" value={avaliations.description} className={FormStyle.description} onChange={UpdateAvaliation} />
                     
                     <div className={FormStyle.buttonContainer}>
-                        <button type='submit' onClick={ContributeToFeed} className={FormStyle.button}>Contribuir</button>
+                        
+                        <button className={FormStyle.button} onClick={CloseModalOnButtonClicked}>Cancelar</button>
+                        <button type='submit' onClick={ContributeToFeed} className={FormStyle.button}>Avaliar</button>
                     </div>
                 </form>
             </div>
