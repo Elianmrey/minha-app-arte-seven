@@ -59,7 +59,7 @@ export default function AvaliationForm({ avaliation, CloseModalOnButtonClicked }
                     <label htmlFor='author' className={FormStyle.label}>Avaliado por:</label>
                     <input placeholder='Identifique-se aqui' type="text" name="author" value={avaliations.author}   className={FormStyle.userName} onChange={UpdateAvaliation} />
                 
-                    <label htmlFor='note'>Avaliação Percebida: </label>     
+                    <label htmlFor='note' className={FormStyle.label}>Avaliação Percebida: </label>     
                     <input type='number' placeholder='Proponha sua avaliação aqui (de 1 a 10)' name="note" min={ 2 } max ={10 } value={avaliations.note} className={FormStyle.fieldNoteValue} onChange={UpdateAvaliation} />
 
                     <label htmlFor='description' className={FormStyle.label}>Argumento da Nota:</label>

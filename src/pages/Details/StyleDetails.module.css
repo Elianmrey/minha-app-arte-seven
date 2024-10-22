@@ -47,7 +47,6 @@
     align-items:center;
     width: 90%;
     margin: auto;
-    
 }
 
 .buttonBackContainer
@@ -142,15 +141,15 @@ h1
 @media(min-width:768px)
 {
 .poster {
-        width: 50%;
-        border-radius: 20px;
-        border: groove indigo;
-        outline: solid rgb(54, 1, 107);
-    }
-
-        .overviewContainer {
-            width: 50%;
-        }
+    width: 50%;
+    border-radius: 20px;
+    border: groove indigo;
+    outline: solid rgb(54, 1, 107);
+}
+.overviewContainer 
+{
+   width: 50%;
+}
 }
 
 @media(pointer:fine) {
