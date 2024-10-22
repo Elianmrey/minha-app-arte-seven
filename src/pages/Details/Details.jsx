@@ -20,23 +20,13 @@ export default function Details({ cardType, whereToGo }) {
     const { id } = useParams();
 
 
-    
+   
     //Salvando comentarios no LocalStorage para não perder as resenhas de usuários 
-    const [avaliations, setAvaliations] = useState([]);
-    const commentsList = GetFromLocalStrg('@avaliations');
-    const avaliationsTrated = commentsList.filter(items => items !== id);
-    
-    
-    SaveToLocalStrg('@avaliations', [...[id, ...avaliationsTrated]]);
-    
-    ///NEEDS WORK
+    const comments = GetFromLocalStrg('@avaliations')
+    const [avaliations, setAvaliations] = useState([...comments]);
+    SaveToLocalStrg('@avaliations', [...[id, ...avaliations]]);
+    const avaliationsTrated = avaliations.filter(items => items !== id);
   
-
-    
-    
-    
-
-
 
     //Enviando contribuição formada para o Feed de contribuições (O vetor de Contribuições)
     function Avaliate(avaliation) {
