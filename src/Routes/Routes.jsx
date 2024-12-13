@@ -14,7 +14,7 @@ const routes = createBrowserRouter(
       <Route>
     <Route  path="/" element={<Home />}  loader={() => HandleVerificationProtected()}/>,
     <Route  path="/movies/details/:id" element={<Details cardType='movies' whereToGo='/'/>} loader={() => HandleVerificationProtected()} />,
-    <Route  path="/tvshows/details/:id" element={<Details cardType='tvShows' whereToGo='/'/>} loader={() => HandleVerificationProtected()} />,
+    <Route  path="/tv/details/:id" element={<Details cardType='tvShows' whereToGo='/'/>} loader={() => HandleVerificationProtected()} />,
     <Route  path="/favlist" element={<FavList />}  loader={() => HandleVerificationProtected()}/>,
     <Route  path="/*" element={<NotFound />}  loader={() => HandleVerificationProtected()}/>,
     </Route>
