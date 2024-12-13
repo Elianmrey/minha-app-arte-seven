@@ -7,19 +7,8 @@
 }
 
 .image{
-    width: 20%;
-    filter: blur(10px)
-             brightness(70%)
-             contrast(200%)
-             grayscale(100%);        
-    user-select: none;     
-    pointer-events: none;
-    opacity: 0.25;
- }
-.imageFloat{
-    width: 20%;
-    position: absolute;   
-    margin-bottom: 230px;
+    width:300px;
+    
     user-select: none;
     pointer-events: none;
     z-index: 1;
@@ -71,12 +60,12 @@
     font-size: clamp(1rem , 1.5vw, 1rem);
     white-space: nowrap;
     border:none;
-     cursor: url('../../components/img/cursor.png') -16 -16 auto;
+    
 }
 
 .button:hover {
     background-color: #9c39ec;
-    cursor: url('../img/cursor-no-shadow.png') -16 -16 auto;
+   cursor: url('../../components/img/cursor.png') -16 -16 auto;
     box-shadow: 0px 0px 15px 1.5px #b16df5;
 }
 .button:active {

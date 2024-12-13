@@ -52,7 +52,7 @@ function handleChange(event) {
   return (
     <div className={styles.container}>
       <img src={logo} className={styles.image} />
-      <img src={logo} className={styles.imageFloat} />
+     
       <h1 className={styles.title}>Arte Se7em</h1>
       <form className={styles.form} onSubmit={(e) => {e.preventDefault(); handleAsuthentication(loginData.username, loginData.password)}}>
       <label htmlFor='username' className={styles.text}>Usuário:</label>
