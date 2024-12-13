@@ -1,0 +1,86 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.image{
+    width: 20%;
+    filter: blur(10px)
+             brightness(70%)
+             contrast(200%)
+             grayscale(100%);        
+    user-select: none;     
+    pointer-events: none;
+    opacity: 0.25;
+ }
+.imageFloat{
+    width: 20%;
+    position: absolute;   
+    margin-bottom: 230px;
+    user-select: none;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.title{
+    color:white;
+    font-size: 40px;
+    padding: 30px;
+    text-align: center;
+    user-select: none;
+     pointer-events: none;
+     font-weight: bold;
+}
+
+.text{
+    color:white;
+    text-align: center;
+    user-select: none;
+    pointer-events: none;
+    font-weight: bold;
+}
+
+.inputText
+{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin: 20px 10px;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly center;
+    align-Items:center;
+    height: 40px;
+    width: 300px;
+    color: white;
+}
+
+.button
+{
+    background-color: #680391;
+    color:#f5f5f5;
+    width: 300px;
+    height: 40px;
+    padding: 0px 20px;
+    margin: 10px;
+    border-radius: 20px;  
+    text-rendering: optimizeLegibility;
+    font-size: clamp(1rem , 1.5vw, 1rem);
+    white-space: nowrap;
+    border:none;
+     cursor: url('../../components/img/cursor.png') -16 -16 auto;
+}
+
+.button:hover {
+    background-color: #9c39ec;
+    cursor: url('../img/cursor-no-shadow.png') -16 -16 auto;
+    box-shadow: 0px 0px 15px 1.5px #b16df5;
+}
+.button:active {
+    background-color: indigo;
+    box-shadow: none;
+    
+}

@@ -9,3 +9,13 @@ export const options = {
         Authorization: `Bearer ${EnvKey}`,
     },
 };
+
+
+export const optionPost = {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        accept: 'application/json',
+        Authorization: `Bearer ${EnvKey}`
+    }
+  };
