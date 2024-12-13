@@ -56,9 +56,9 @@ function handleChange(event) {
       <h1 className={styles.title}>Arte Se7em</h1>
       <form className={styles.form} onSubmit={(e) => {e.preventDefault(); handleAsuthentication(loginData.username, loginData.password)}}>
       <label htmlFor='username' className={styles.text}>Usuário:</label>
-      <input name='username' type="text" placeholder="Username" value={loginData.username} className={styles.inputText} onChange={handleChange}/>
+      <input name='username' type="text" placeholder="Nome de Usuário" value={loginData.username} className={styles.inputText} onChange={handleChange}/>
       <label htmlFor='password' className={styles.text}>Senha:</label>
-      <input name='password' type="password" placeholder="Password" value={loginData.password} className={styles.inputText} onChange={handleChange}/>
+      <input name='password' type="password" placeholder="Senha" value={loginData.password} className={styles.inputText} onChange={handleChange}/>
       <button className={styles.button}>Entrar ✌️</button>
       </form>
     </div>
