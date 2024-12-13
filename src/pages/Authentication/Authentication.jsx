@@ -23,7 +23,6 @@ export default function AuthenticationScreen() {
     const response = await AuthenticatingUser(username, password);
 
     if (response && response !=='' && response !== null) {
-      // console.log("Resposta de autenticação++++++++++++++++++++++++++++++++++++:", response,);
       SaveToLocalStrg("@sessionID",response);
        window.location.replace( '/');
     } 

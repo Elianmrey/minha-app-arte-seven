@@ -40,12 +40,8 @@ export default function NavBar() {
 
       <ul className={`${NavBarStyle.menu} ${isOpen ? NavBarStyle.menuOpen : NavBarStyle.menuClosed}`}>
         <li onClick={toggleMenu}><Link to="/">Home</Link></li>
-        <li onClick={toggleMenu}><Link to="/">Minha Conta</Link></li>
         <li onClick={toggleMenu}><Link to="/favlist">Favoritos</Link></li>
-        <li onClick={toggleMenu}><Link to="/">Meus filmes</Link></li>
-        <li onClick={toggleMenu}><Link to="/">Lançamentos</Link></li>
-        <li onClick={toggleMenu}><Link to="/">Gêneros</Link></li>
-        <li onClick={toggleMenu}><Link to="/">Recomendados</Link></li>
+        <li onClick={toggleMenu}><Link to="/">Filmes Alugados</Link></li>
       </ul>
     </div>
   );

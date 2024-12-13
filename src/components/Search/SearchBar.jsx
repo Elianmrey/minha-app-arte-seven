@@ -12,9 +12,11 @@ export default function SearchBar({ onSearch }) {
         onSearch(value);
     };
 
+
+
     return (
         <div className={StyleSearch.Container}>
-            <h2>Buscar Filmes e Series</h2>
+            <label htmlFor="search" className={StyleSearch.Title}>Buscar Filmes e Series</label>
             <div className={StyleSearch.ContainerSearch}>
                 <input
                     type="text"

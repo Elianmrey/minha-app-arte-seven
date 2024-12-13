@@ -1,6 +1,12 @@
 .Container {
-    margin-bottom: 20px;
+   
     color: #fff;
+}
+.Title {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    width: 100%;
 }
 
 .ContainerSearch {
