@@ -1,4 +1,4 @@
-import EnvironmentKey from './EnvironmentConst.module'
+import EnvironmentKey from './EnvironmentConst.module.js'
 
 const EnvKey = EnvironmentKey();
 
