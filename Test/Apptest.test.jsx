@@ -16,3 +16,14 @@ test("teste de componente App", () => {
     
     expect(screen.queryAllByTitle('Home')).toBeTruthy()
 });
+
+
+test("Testar se o componente App renderiza o componente Home como filho pela rota indicada", () => {
+    render(
+        <MemoryRouter initialEntries={['/']}>
+            <App />
+        </MemoryRouter>
+    );
+
+    expect(screen.getByTitle('Home')).toBeInTheDocument();
+});
